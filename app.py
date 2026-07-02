@@ -485,7 +485,7 @@ elif page == "🎯 Opportunity Analysis":
 
     st.plotly_chart(fig, use_container_width=True)
 
-    # ===========================
+   # ===========================
     # BUSINESS INSIGHTS PAGE
     # ===========================
 elif page == "💡 Business Insights":
@@ -494,32 +494,30 @@ elif page == "💡 Business Insights":
     st.markdown("Key findings from the Google Maps Business Analysis")
     st.divider()
 
-    
-
     # ----------------------------------------
     # Business Insights
     # ----------------------------------------
 
-st.subheader("📊 Key Findings")
+    st.subheader("📊 Key Findings")
 
-with st.expander("View Key Findings", expanded=True):
+    with st.expander("View Key Findings", expanded=True):
 
-    st.markdown("""
-    **🌐 Digital Presence**
-    - 535 out of 691 businesses (77.42%) do not have a website, highlighting a significant digital presence gap.
+        st.markdown("""
+        **🌐 Digital Presence**
+        - 535 out of 691 businesses (77.42%) do not have a website, highlighting a significant digital presence gap.
 
-    **⭐ Customer Satisfaction**
-    - The average business rating is **4.35/5**, indicating good customer satisfaction.
+        **⭐ Customer Satisfaction**
+        - The average business rating is **4.35/5**, indicating good customer satisfaction.
 
-    **🚀 Opportunity Businesses**
-    - 46 businesses have been identified as high-potential opportunities because they have high ratings but no website.
+        **🚀 Opportunity Businesses**
+        - 46 businesses have been identified as high-potential opportunities because they have high ratings but no website.
 
-    **📍 Area-wise Analysis**
-    - Palanpur Canal Road, Rander Road, and Gujarat Gas Circle have the highest concentration of businesses.
+        **📍 Area-wise Analysis**
+        - Palanpur Canal Road, Rander Road, and Gujarat Gas Circle have the highest concentration of businesses.
 
-    **🏪 Category Analysis**
-    - Clothing, Medical Store, Electronics Store, and Grocery are among the most common business categories.
+        **🏪 Category Analysis**
+        - Clothing, Medical Store, Electronics Store, and Grocery are among the most common business categories.
 
-    **📈 Growth Potential**
-    - Businesses with high ratings and many customer reviews have strong potential to expand their online presence.
-    """)
+        **📈 Growth Potential**
+        - Businesses with high ratings and many customer reviews have strong potential to expand their online presence.
+        """)
