@@ -488,8 +488,7 @@ elif page == "🎯 Opportunity Analysis":
     # ===========================
     # BUSINESS INSIGHTS PAGE
     # ===========================
-
-    elif page == "💡 Business Insights":
+elif page == "💡 Business Insights":
 
     st.title("💡 Business Insights")
     st.markdown("Key findings from the Google Maps Business Analysis")
@@ -501,7 +500,7 @@ elif page == "🎯 Opportunity Analysis":
     # Business Insights
     # ----------------------------------------
 
-    st.subheader("📊 Key Findings")
+st.subheader("📊 Key Findings")
 
     with st.expander("View Key Findings", expanded=True):
 
