@@ -486,10 +486,10 @@ elif page == "🎯 Opportunity Analysis":
     st.plotly_chart(fig, use_container_width=True)
 
     # ===========================
-# BUSINESS INSIGHTS PAGE
-# ===========================
+    # BUSINESS INSIGHTS PAGE
+    # ===========================
 
-elif page == "💡 Business Insights":
+    elif page == "💡 Business Insights":
 
     st.title("💡 Business Insights")
     st.markdown("Key findings from the Google Maps Business Analysis")
