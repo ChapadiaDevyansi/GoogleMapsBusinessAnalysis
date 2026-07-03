@@ -484,25 +484,23 @@ elif page == "🎯 Opportunity Analysis":
     fig.update_layout(height=550)
 
     st.plotly_chart(fig, use_container_width=True)
-    # KPI values for Business Insights
-total_businesses = len(filtered_df)
-
-without_website = (
-    filtered_df["Website(Yes/No)"] == "No"
-).sum()
-
-avg_rating = round(filtered_df["Rating"].mean(), 2)
-
-opportunity = (
-    filtered_df["Opportunity Flag(High Rating + No Website)"] == "Yes"
-).sum()
-
+    
    # ===========================
 # BUSINESS INSIGHTS PAGE
 # ===========================
 
 elif page == "💡 Business Insights":
+     total_businesses = len(filtered_df)
 
+    without_website = (
+        filtered_df["Website(Yes/No)"] == "No"
+    ).sum()
+
+    avg_rating = round(filtered_df["Rating"].mean(), 2)
+
+    opportunity = (
+        filtered_df["Opportunity Flag(High Rating + No Website)"] == "Yes"
+    ).sum()
     st.title("💡 Business Insights")
     st.markdown("Key findings from the Google Maps Business Analysis")
     st.divider()
