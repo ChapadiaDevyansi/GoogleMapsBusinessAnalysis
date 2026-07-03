@@ -486,62 +486,73 @@ elif page == "🎯 Opportunity Analysis":
     st.plotly_chart(fig, use_container_width=True)
 
    # ===========================
-    # BUSINESS INSIGHTS PAGE
-    # ===========================
-    elif page == "💡 Business Insights":
+# BUSINESS INSIGHTS PAGE
+# ===========================
+
+elif page == "💡 Business Insights":
 
     st.title("💡 Business Insights")
     st.markdown("Key findings from the Google Maps Business Analysis")
+    st.divider()
 
     # ----------------------------
-    # Top Opportunity Businesses
+    # Top 10 Opportunity Businesses
     # ----------------------------
-    st.markdown("## 🏆 Top 10 Opportunities Businesses")
 
-      top_opportunities = (
-         df[
-        (df["Website(Yes/No)"] == "No") &
-        (df["Rating"] >= 4.9)
-       ]
-        .sort_values(by=["Rating", "No. of Reviews"], ascending=[False, False])
+    st.subheader("🏆 Top 10 Opportunity Businesses")
+
+    top_opportunities = (
+        filtered_df[
+            (filtered_df["Website(Yes/No)"] == "No") &
+            (filtered_df["Rating"] >= 4.9)
+        ]
+        .sort_values(
+            by=["Rating", "No. of Reviews"],
+            ascending=[False, False]
+        )
         .head(10)
-       )
-
-     st.dataframe(
-     top_opportunities[
-        ["Shop Name", "Address/Street", "Category", "Rating", "No. of Reviews"]
-     ],
-     use_container_width=True,
-     hide_index=True
     )
 
+    st.dataframe(
+        top_opportunities[
+            [
+                "Shop Name",
+                "Address/Street",
+                "Category",
+                "Rating",
+                "No. of Reviews",
+            ]
+        ],
+        use_container_width=True,
+        hide_index=True,
+    )
 
-  st.divider()
+    st.divider()
 
-    # ----------------------------------------
-    # Business Insights
-    # ----------------------------------------
+    # ----------------------------
+    # Key Findings
+    # ----------------------------
 
-st.subheader("📊 Key Findings")
+    st.subheader("📊 Key Findings")
 
-with st.expander("View Key Findings", expanded=True):
+    with st.expander("View Key Findings", expanded=True):
 
-        st.markdown("""
-        **🌐 Digital Presence**
-        - 535 out of 691 businesses (77.42%) do not have a website, highlighting a significant digital presence gap.
+        st.markdown(f"""
+### 🌐 Digital Presence
+- **{without_website} out of {total_businesses} businesses ({without_website/total_businesses*100:.2f}%)** do not have a website.
 
-        **⭐ Customer Satisfaction**
-        - The average business rating is **4.35/5**, indicating good customer satisfaction.
+### ⭐ Customer Satisfaction
+- Average business rating is **{avg_rating:.2f}/5**.
 
-        **🚀 Opportunity Businesses**
-        - 46 businesses have been identified as high-potential opportunities because they have high ratings but no website.
+### 🚀 Opportunity Businesses
+- **{opportunity} businesses** have high ratings but no website.
 
-        **📍 Area-wise Analysis**
-        - Palanpur Canal Road, Rander Road, and Gujarat Gas Circle have the highest concentration of businesses.
+### 📍 Area-wise Analysis
+- Palanpur Canal Road, Rander Road and Gujarat Gas Circle have the highest concentration of businesses.
 
-        **🏪 Category Analysis**
-        - Clothing, Medical Store, Electronics Store, and Grocery are among the most common business categories.
+### 🏪 Category Analysis
+- Clothing, Medical Store, Electronics Store and Grocery are among the most common categories.
 
-        **📈 Growth Potential**
-        - Businesses with high ratings and many customer reviews have strong potential to expand their online presence.
-        """)
+### 📈 Growth Potential
+- Highly rated businesses without websites are ideal candidates for digital transformation.
+""")
