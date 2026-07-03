@@ -500,7 +500,7 @@ st.markdown("## 🏆 Top 10 Opportunities Businesses")
 
 top_opportunities = (
     df[
-        (df["Website"] == "No") &
+        (df["Website(Yes/No)"] == "No") &
         (df["Rating"] >= 4.9)
     ]
     .sort_values(by=["Rating", "No. of Reviews"], ascending=[False, False])
