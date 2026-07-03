@@ -490,9 +490,12 @@ elif page == "🎯 Opportunity Analysis":
 # ===========================
 
 elif page == "💡 Business Insights":
-     total_businesses = len(filtered_df)
 
-    without_website = (filtered_df["Website(Yes/No)"] == "No"
+    # KPI Values
+    total_businesses = len(filtered_df)
+
+    without_website = (
+        filtered_df["Website(Yes/No)"] == "No"
     ).sum()
 
     avg_rating = round(filtered_df["Rating"].mean(), 2)
@@ -500,6 +503,7 @@ elif page == "💡 Business Insights":
     opportunity = (
         filtered_df["Opportunity Flag(High Rating + No Website)"] == "Yes"
     ).sum()
+
     st.title("💡 Business Insights")
     st.markdown("Key findings from the Google Maps Business Analysis")
     st.divider()
@@ -529,11 +533,11 @@ elif page == "💡 Business Insights":
                 "Address/Street",
                 "Category",
                 "Rating",
-                "No. of Reviews",
+                "No. of Reviews"
             ]
         ],
         use_container_width=True,
-        hide_index=True,
+        hide_index=True
     )
 
     st.divider()
@@ -560,7 +564,7 @@ elif page == "💡 Business Insights":
 - Palanpur Canal Road, Rander Road and Gujarat Gas Circle have the highest concentration of businesses.
 
 ### 🏪 Category Analysis
-- Clothing, Medical Store, Electronics Store and Grocery are among the most common categories.
+- Clothing, Medical Store, Electronics Store and Grocery are among the most common business categories.
 
 ### 📈 Growth Potential
 - Highly rated businesses without websites are ideal candidates for digital transformation.
