@@ -492,6 +492,30 @@ elif page == "💡 Business Insights":
 
     st.title("💡 Business Insights")
     st.markdown("Key findings from the Google Maps Business Analysis")
+
+    # ----------------------------
+# Top Opportunity Businesses
+# ----------------------------
+st.markdown("## 🏆 Top 10 Opportunities Businesses")
+
+top_opportunities = (
+    df[
+        (df["Website"] == "No") &
+        (df["Rating"] >= 4.9)
+    ]
+    .sort_values(by=["Rating", "No. of Reviews"], ascending=[False, False])
+    .head(10)
+)
+
+st.dataframe(
+    top_opportunities[
+        ["Shop Name", "Address/Street", "Category", "Rating", "No. of Reviews"]
+    ],
+    use_container_width=True,
+    hide_index=True
+)
+
+
     st.divider()
 
     # ----------------------------------------
