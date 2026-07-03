@@ -522,7 +522,7 @@ st.divider()
     # Business Insights
     # ----------------------------------------
 
-     st.subheader("📊 Key Findings")
+ st.subheader("📊 Key Findings")
 
      with st.expander("View Key Findings", expanded=True):
 
