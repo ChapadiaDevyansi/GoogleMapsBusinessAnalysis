@@ -516,7 +516,7 @@ st.dataframe(
 )
 
 
-    st.divider()
+st.divider()
 
     # ----------------------------------------
     # Business Insights
