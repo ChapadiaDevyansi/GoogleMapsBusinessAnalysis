@@ -492,8 +492,7 @@ elif page == "🎯 Opportunity Analysis":
 elif page == "💡 Business Insights":
      total_businesses = len(filtered_df)
 
-    without_website = (
-        filtered_df["Website(Yes/No)"] == "No"
+    without_website = (filtered_df["Website(Yes/No)"] == "No"
     ).sum()
 
     avg_rating = round(filtered_df["Rating"].mean(), 2)
